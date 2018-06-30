@@ -1,0 +1,25 @@
+{
+  "name": "curl-transaction-core",
+  "version": "1.0.0",
+  "description": "Core code for curling IOTA transactions. Must inject either the WebGL curl or ccurl implementation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pRizz/curl-transaction-core.git"
+  },
+  "keywords": [
+    "IOTA"
+  ],
+  "author": "Peter Ryszkiewicz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pRizz/curl-transaction-core/issues"
+  },
+  "homepage": "https://github.com/pRizz/curl-transaction-core#readme",
+  "dependencies": {
+    "iota.lib.js": "^0.4.7"
+  }
+}
