@@ -79,9 +79,7 @@ async function curl({ trunkTransaction, branchTransaction, minWeightMagnitude = 
 function localAttachToTangle(trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray, callback) {
     curl({ trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray }).then((processedTrytes) => {
         callback(null, processedTrytes)
-    }).catch((error) => {
-        callback(error)
-    })
+    }).catch(callback)
 }
 
 module.exports = function({ curlImpl }) {
