@@ -76,10 +76,19 @@ async function curl({ trunkTransaction, branchTransaction, minWeightMagnitude = 
     return processArrayOfTrytes({ trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray })
 }
 
+function localAttachToTangle(trunkTransaction, branchTransaction, minWeightMagnitude, trytes, callback) {
+    curl.curl({ trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray: trytes }).then((processedTrytes) => {
+        callback(null, processedTrytes)
+    }).catch((error) => {
+        callback(error)
+    })
+}
+
 module.exports = function({ curlImpl }) {
     _curlImpl = curlImpl
 
     return {
-        curl
+        curl,
+        localAttachToTangle
     }
 }
