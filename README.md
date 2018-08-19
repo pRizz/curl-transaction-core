@@ -1,4 +1,7 @@
 # curl-transaction-core
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/pRizz/curl-transaction-core.svg)](https://greenkeeper.io/)
+
 Core code for curling IOTA transactions. Must inject either the WebGL curl or ccurl implementation.
 
 ## Example Usage with ccurl
