@@ -43,7 +43,7 @@ Core code for curling IOTA transactions. Must inject either the WebGL curl or cc
     import curlImpl from 'curl-transaction-webgl2-impl';
     
     const curl = curlTransaction({ curlImpl });
-    const localAttachToTangle = async function(trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray, callback) {
+    const localAttachToTangle = async function(trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray) {
     
         var trytes = await curl.curl({ trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray }).then((processedTrytes) => {
             return processedTrytes
