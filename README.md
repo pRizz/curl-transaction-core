@@ -37,4 +37,26 @@ Core code for curling IOTA transactions. Must inject either the WebGL curl or cc
     }
 
 
-
+## Using together with Masked Authenticated Messaging (@iota/mam)
+    import * as Mam from '@iota/mam';
+    import curlTransaction from 'curl-transaction-core';
+    import curlImpl from 'curl-transaction-webgl2-impl';
+    
+    const curl = curlTransaction({ curlImpl });
+    const localAttachToTangle = async function(trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray) {
+    
+        var trytes = await curl.curl({ trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray }).then((processedTrytes) => {
+            return processedTrytes
+        }).catch((error) => {
+            throw error;
+        });
+    
+        return trytes;
+    };
+    
+    const mamConfig = {
+        provider: "https://nodes.devnet.iota.org:443",
+        attachToTangle: localAttachToTangle
+    };
+    
+    Mam.init(mamConfig);
